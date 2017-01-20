@@ -19,9 +19,9 @@
 	left: 0;
 	perspective: 100px;
 	perspective-origin: 0 0;
-
-	/*filter: blur(8px);*/
-	transition: perspective-origin 20s cubic-bezier(0.19, 1, 0.22, 1);
+	transition-property: perspective-origin-x, perspective-origin-y, perspective-origin;
+	transition-duration: 20s;
+	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 	/*animation-name: initFlares;*/
 	animation-duration: 1.5s;
 	animation-fill-mode: backwards;
