@@ -1,0 +1,66 @@
+@import '~foundation-sites/scss/foundation';
+
+.PageHeader {
+	padding: 15px 0;
+}
+
+#mainBanner {
+	height: 112px;
+	vertical-align: middle;
+	position: relative;
+	margin-bottom: 50px;
+	margin-top: 50px;
+	@include breakpoint(small down) {
+		margin-top: 25px;
+	}
+}
+
+#mainBanner > .center {
+	background: #EFE3D7;
+	z-index: 5;
+	position: relative;
+	margin-left: 55px;
+	margin-right: 55px;
+	height: 110px;
+}
+
+#mainBanner > .center > .content {
+	font-family: 'Cormorant Garamond', serif;
+	display: table;
+	font-size: 46px;
+	padding: 0 15px;
+	height: 100%;
+	margin: auto;
+	line-height: 48px;
+	@include breakpoint(medium down) {
+		font-size: 36px;
+		line-height: 40px;
+	}
+	
+	@include breakpoint(small down) {
+		font-size: 30px;
+		line-height: 34px;
+	}
+}
+
+#mainBanner > .center > .content > .inner {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#mainBanner > .edge {
+	width: 105px;
+	height: 112px;
+	top: 26px;
+	position: absolute;
+	z-index: 1;
+}
+
+#mainBanner > .leftEdge {
+	background: url("../../images/LeftBannerEdge.svg");
+}
+
+#mainBanner > .rightEdge {
+	background: url("../../images/RightBannerEdge.svg");
+	right: 0;
+}

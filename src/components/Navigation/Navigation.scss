@@ -1,0 +1,56 @@
+@import "~motion-ui/motion-ui";
+
+#largeNavigation {
+	background: white;
+	
+	box-shadow: 0 4px 0 2px RGBA(0,0,0,0.25);
+	position: relative;
+	font-family: "Raleway", sans-serif;
+	text-transform: uppercase;
+	font-size: 1.1em;
+	> .row {
+		min-height: 100px;
+		li * {
+			justify-content: center;
+		}
+
+		li.disabled {
+			color: #666;	
+			> i {
+			margin-right: 0.3em;
+			}
+		}
+	}
+
+	&.animateShow {
+		@include mui-hinge(
+		  $state: in,
+		  $from: top,
+		  $perspective: 200px,
+		  $fade: false,
+		  $turn-origin: from-back,
+		  $duration: .3s,
+		  $timing: map-get($motion-ui-easings,bounce-in)
+		);
+	}
+
+	&.animateHide {
+		@include mui-hinge(
+		  $state: out,
+		  $from: top,
+		  $perspective: 200px,
+		  $fade: false,
+		  $turn-origin: from-back,
+		  $duration: 0.3s,
+		  $timing: map-get($motion-ui-easings,bounce-out)
+		);
+	}
+}
+
+.Navigation {
+	perspective: 2000px;
+}
+
+.Navigation > .title-bar {
+	position: relative;
+}
