@@ -1,0 +1,119 @@
+@import '~foundation-sites/scss/foundation';
+.SaveDateCard {
+  perspective: 600px;
+  perspective-origin: center 200px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  @include breakpoint(small down) {
+      font-size: 14px;
+    }
+  h1, h2 {
+    font-family: 'Cormorant Garamond', serif !important;
+    line-height: 1em;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 26px;
+  }
+
+  p {
+    margin-bottom: 0px;
+    line-height: 1.3em;
+    font-size: 1em;
+  }
+
+  a {
+    font-weight: bold;
+    font-size: 1.5em;
+    
+  }
+
+  > .inner {
+      animation-delay: .5s;
+      animation-duration: 1s;
+      animation-fill-mode: backwards;
+      animation-name: saveDateCard_openCard;
+      transform-style: preserve-3d;
+      margin: 15px;
+    > div {
+      height: 150px;
+      animation-delay: .5s;
+      animation-duration: 1s;
+      animation-fill-mode: backwards;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    >.top {
+      transform-origin: center bottom;
+      transform: rotateX(-4deg);
+      animation-name: saveDateCard_openTop;
+      position: relative;
+      
+      > div {
+        backface-visibility: hidden;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      > .back {
+        transform: rotateY( 180deg );
+        background: #E9DBCE;
+        font-size: 50px;
+        line-height: 150px;
+        vertical-align: middle;
+
+      }
+
+      > .front {
+        background: #CEB8A3;
+        padding: 15px;
+        @include breakpoint(small down) {
+          padding-top: 30px;
+        }
+      }
+    }
+
+    > .bottom {
+      padding: 15px;
+      transform-origin: center top;
+      transform: rotateX(10deg);
+      background: #E9DBCE;
+      box-shadow: 0 4px 0 2px RGBA(0,0,0,.25);
+      animation-name: saveDateCard_openBottom;
+      @include breakpoint(small down) {
+        padding-top: 30px;
+      }
+
+    }
+  }
+}
+
+@keyframes saveDateCard_openTop {
+  0% {
+    transform: translateY(-75px) rotateX(-179deg);
+  }
+  100% {
+    transform: rotateX(-4deg);
+  }
+}
+
+@keyframes saveDateCard_openBottom {
+  0% {
+    transform: translateY(-75px) rotateX(-10deg);
+  }
+  100% {
+    transform: rotateX(10deg);
+  }
+}
+
+@keyframes saveDateCard_openCard {
+  0% {
+    transform: rotateZ(180deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
