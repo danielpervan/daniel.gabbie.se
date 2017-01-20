@@ -19,7 +19,7 @@
 	left: 0;
 	perspective: 100px;
 	perspective-origin: 0 0;
-	transition-property: perspective-origin-x, perspective-origin-y, perspective-origin;
+	transition-property: perspective-origin;
 	transition-duration: 20s;
 	transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
 	/*animation-name: initFlares;*/

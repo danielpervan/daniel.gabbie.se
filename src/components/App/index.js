@@ -60,7 +60,8 @@ function animateFlares(x,y) {
     y: 100*y/$(document).height()
   }
   $(".flares").css({
-    perspectiveOrigin: perspective.x + 'px ' + perspective.y + 'px'
+    perspectiveOriginX: perspective.x,
+    perspectiveOriginY: perspective.y
   })
 }
 export default App;
