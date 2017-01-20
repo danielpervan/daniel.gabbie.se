@@ -1,0 +1,39 @@
+.flare {
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	/*background: #C9B977;*/
+	background-image: url("../../images/Flare.png");
+	background-position: center center;
+	background-size: 120px 120px;
+	z-index: 0;
+}
+
+.flares {
+	position: absolute;
+	overflow: hidden;
+	width: 90vw;
+	height: 90vh;
+	top: 0;
+	left: 0;
+	perspective: 100px;
+	perspective-origin: 0 0;
+
+	/*filter: blur(8px);*/
+	transition: perspective-origin 20s cubic-bezier(0.19, 1, 0.22, 1);
+	/*animation-name: initFlares;*/
+	animation-duration: 1.5s;
+	animation-fill-mode: backwards;
+	animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@keyframes initFlares {
+	0% {
+		perspective-origin: -1000px -1000px;
+	}
+
+	100% {
+		
+	}
+}
