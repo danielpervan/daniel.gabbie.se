@@ -21,14 +21,18 @@ class App extends Component {
 
   componentDidMount() {
     $('.flares').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
-      $(document).on('mousemove', (ev) => {
-        animateFlares(ev.pageX, ev.pageY)
-      })
-      animateFlares(Math.random()*$(document).width(), Math.random()*$(document).height())
+      setTimeout(() => {
+        $(document).on('mousemove', (ev) => {
+          animateFlares(ev.pageX, ev.pageY)
+        })
+        animateFlares(Math.random()*$(document).width(), Math.random()*$(document).height())
+      },300)
     })
 
-    $('.flares').css({
-      animationName: 'initFlares'
+    $(()=>{
+      $('.flares').css({
+        animationName: 'initFlares'
+      })
     })
   }
 
