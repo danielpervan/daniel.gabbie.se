@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import PageHeader from '../PageHeader'
 import Flare from '../Flare'
-import SaveDateCard from '../SaveDateCard'
 import $ from 'jquery'
 
 
@@ -25,7 +24,7 @@ class App extends Component {
         $(document).on('mousemove', (ev) => {
           animateFlares(ev.pageX, ev.pageY)
         })
-        animateFlares(Math.random()*$(document).width(), Math.random()*$(document).height())
+        //animateFlares(Math.random()*$(document).width(), Math.random()*$(document).height())
       },300)
     })
 
@@ -40,8 +39,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="flares">{this.flares}</div>
-        <PageHeader/>
-        {true && <SaveDateCard/>}
+        <PageHeader page={this.props.page}/>
+        {this.props.children}
       </div>
     );
   }
