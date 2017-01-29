@@ -18,7 +18,7 @@ class PageHeader extends Component {
           </div>
         </div>
 
-        <Navigation/>
+        <Navigation page={this.props.page}/>
       </div>
     );
   }
