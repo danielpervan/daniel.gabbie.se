@@ -1,0 +1,15 @@
+@import '~foundation-sites/scss/foundation';
+
+.TextBox {
+	position: relative;	
+	background: $white;
+	box-shadow: 0 4px 0 4px RGBA(0,0,0,0.5);
+	> .content {
+		margin: 80px auto;
+		@include breakpoint(medium down) {
+			margin: 20px auto;
+		}
+	}
+	margin-top: 25px;
+	margin-bottom: 50px;
+}
