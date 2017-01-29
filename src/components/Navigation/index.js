@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import './Navigation.scss'
-
+import {Link} from 'react-router'
 import 'font-awesome/scss/font-awesome.scss'
 
 class Navigation extends Component {
   componentDidMount() {
     $(document).foundation()
+  }
+
+  isCurrentPage(page) {
+    if (typeof this.props.page === "undefined") {
+      return false
+    }
+    return page.toLowerCase() === this.props.page.toLowerCase()
   }
 
   render() {
@@ -17,14 +24,14 @@ class Navigation extends Component {
         <div className="" id="largeNavigation" data-animate="animateShow animateHide">
           <div className="row column large-9">
             <ul className="menu medium-expanded vertical">
-              <li className="active">
-                <a href="#">The gist of it</a>
+              <li className={this.isCurrentPage('gist') && "active"}>
+                <Link to="/">The gist of it</Link>
               </li>
               <li className="disabled">
                 <i className="fa fa-lock" aria-hidden="true"></i>About Dubrovnik
               </li>
-              <li className="disabled">
-               <i className="fa fa-lock" aria-hidden="true"></i>Clothing tutorial
+              <li className={this.isCurrentPage('dresscode') ? "active" : ''}>
+               <Link to="dresscode">Clothing tutorial</Link>
               </li>
               <li className="disabled">
                 <i className="fa fa-lock" aria-hidden="true"></i>I want to participate!
