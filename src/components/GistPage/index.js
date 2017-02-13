@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import SaveDateCard from '../SaveDateCard'
-import App from '../App'
-
 import TextBox from '../TextBox'
 
 
 class GistPage extends Component {
   render() {
     return (
-      <App page="gist">
+      <div>
       	<TextBox title="Where are we staying?">
       		<p>All accommodation will be provided for you during your stay between July 6 and July 9. We will probably also make sure that you don't starve throught this event in some way or another.</p>
       		<p>There will be a few different arrangement for different guests, but most of you will likely be staying at <a href="http://www.pervanovoapartments.com/default-en.html">Pervanovo Apartments</a>.</p>
@@ -17,7 +15,7 @@ class GistPage extends Component {
       		<p>If you want to prolonge your stay, the apartments are available for rent. Contact Pervanovo at <a href="mailto:info@pervanovo.hr">info@pervanovo.hr</a>. Prices are available on the <a href="http://www.pervanovoapartments.com/default-en.html">website</a>.</p>
       	</TextBox>
         <SaveDateCard />
-      </App>
+      </div>
     );
   } 
 }

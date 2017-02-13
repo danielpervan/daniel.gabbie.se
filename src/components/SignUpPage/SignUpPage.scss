@@ -1,0 +1,78 @@
+@import '~foundation-sites/scss/foundation';
+
+.signupForm {
+	span.required {
+		font-size: 0.9em;
+		color: $dark-gray;
+		margin-left: 15px;
+	}
+	button{
+		margin: auto;
+		position: relative;
+		display: block;
+	}
+	.formComments {
+		height: 100px;
+	}
+	#formName2, #formAllergies2 {
+		animation: showPerson .5s cubic-bezier(0.23, 1, 0.32, 1);
+		transform-origin: top;
+	}
+
+	&.done {
+		animation: hideSignup .25s;
+		height: 0;
+		overflow: hidden;
+	}
+	&.init {
+		display: none;
+	}
+}
+
+.postingBox {
+	text-align: center;
+	margin-bottom: 30px;
+	> .done > .fa {
+		color: map-get($foundation-palette, success);
+	}
+
+	> .fail {
+		color: map-get($foundation-palette, alert);
+	}
+}
+
+.signupInfo {
+	text-align: center !important;
+	margin-top: 30px;
+}
+
+.facebookButton {
+	background: #3B5998;
+	&:hover {
+		background: #293e6a;
+	}
+}
+
+@keyframes showPerson {
+	0% {
+		opacity: 0;
+		transform: scale(2)
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes hideSignup {
+	0% {
+		opacity: 1;
+		height: auto;
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0);
+		height: auto;
+	}
+}

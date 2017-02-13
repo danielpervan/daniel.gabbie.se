@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Routes from './routes';
-import './index.scss';
-import { browserHistory } from 'react-router'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.scss'
+
+import Routes from './components/Routes'
 
 window.$ = window.jQuery = require("jquery")
 require('foundation-sites')
 
 ReactDOM.render(
-  <Routes history={browserHistory}/>,
-  document.getElementById('root')
+	<Routes/>,
+	document.getElementById('root')
 );

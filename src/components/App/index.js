@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
-import PageHeader from '../PageHeader'
+import './App.scss';
 import Flare from '../Flare'
 import $ from 'jquery'
-
+import '../firebase'
+import PageHeader from '../PageHeader'
 
 class App extends Component {
   constructor(props) {
@@ -14,9 +14,33 @@ class App extends Component {
       this.flares = []
       generateFlares(this.flares)
     })
+    this.state = {
+      uid: null,
+      isAnonymous: true,
+      name: null,
+    }
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        
+        // User is signed in.
+        this.setState({
+          ...this.state,
+          uid: user.uid,
+          isAnonymous: user.isAnonymous,
+          name: user.displayName,
+          email: user.email
+        })
+      } else {
+        // User is signed out.
+        // This should really never happen, but since it somehow does and I'm too tired to actually fix it, I'm gonna bodge a fix
+        this.setState({
+          ...this.state,
+          uid: Math.random().toString(36).slice(2),
+          isAnonymous: true
+        })
+      }
+    }.bind(this))
   }
-
-
 
   componentDidMount() {
     $('.flares').one('webkitAnimationEnd oanimationend msAnimationEnd animationend', () => {
@@ -35,16 +59,29 @@ class App extends Component {
     })
   }
 
+  getChildContext() {
+    return {
+      uid: this.state.uid
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <div className="flares">{this.flares}</div>
-        <PageHeader page={this.props.page}/>
-        {this.props.children}
+        <PageHeader page={this.props.router.getCurrentLocation().pathname}/>
+        <div id="AppContent">
+          {this.props.children}
+        </div>
       </div>
     );
   }
 }
+
+App.childContextTypes = {
+  uid: React.PropTypes.string
+}
+
 
 function generateFlares(storage) {
   for (var i=0; i<100; i++) {
@@ -63,4 +100,7 @@ function animateFlares(x,y) {
     perspectiveOriginY: perspective.y
   })
 }
+
+
+
 export default App;

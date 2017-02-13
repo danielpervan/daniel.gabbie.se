@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import App from '../App'
 import TextBox from '../TextBox'
 import './DressCodePage.scss'
 import davincifrack from '../../images/davincifrack.png'
@@ -7,7 +6,7 @@ import davincifrack from '../../images/davincifrack.png'
 class DressCodePage extends Component {
   render() {
     return (
-      <App page="dresscode">
+      <div>
         <TextBox title="Clothing tutorial">
           <p>Clothes are an important part of every persons life. They protect you from mosquitoes and bad weather. They can also be used as an emergency climping rope to get away from sticky situations.</p>
           <p>Clothes will thusly be required at this wedding. There will also be a code for how to dress properly; a dress code if you like. That dress code is tailcoat for the gentlemen (också känd som <i>frack</i>) and long dress for the gentlewomen (också känd som <i>långklänning</i>).</p>
@@ -43,7 +42,7 @@ class DressCodePage extends Component {
           042-13&nbsp;27&nbsp;09<br/>
           <a href="mailto:info@anina.se">info@anina.se</a>
         </TextBox>
-      </App>
+      </div>
     );
   } 
 }

@@ -12,7 +12,7 @@ class Navigation extends Component {
     if (typeof this.props.page === "undefined") {
       return false
     }
-    return page.toLowerCase() === this.props.page.toLowerCase()
+    return '/'+page.toLowerCase() === this.props.page.toLowerCase() ? 'active' : ''
   }
 
   render() {
@@ -24,17 +24,17 @@ class Navigation extends Component {
         <div className="" id="largeNavigation" data-animate="animateShow animateHide">
           <div className="row column large-9">
             <ul className="menu medium-expanded vertical">
-              <li className={this.isCurrentPage('gist') && "active"}>
+              <li className={this.isCurrentPage('')}>
                 <Link to="/">The gist of it</Link>
               </li>
               <li className="disabled">
                 <i className="fa fa-lock" aria-hidden="true"></i>About Dubrovnik
               </li>
-              <li className={this.isCurrentPage('dresscode') ? "active" : ''}>
+              <li className={this.isCurrentPage('dresscode')}>
                <Link to="dresscode">Clothing tutorial</Link>
               </li>
-              <li className="disabled">
-                <i className="fa fa-lock" aria-hidden="true"></i>I want to participate!
+              <li className={this.isCurrentPage('signup')}>
+                <Link to="signup">I want to participate!</Link>
               </li>
             </ul>
           </div>
