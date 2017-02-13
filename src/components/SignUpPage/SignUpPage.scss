@@ -19,6 +19,12 @@
 		transform-origin: top;
 	}
 
+	.desc {
+		margin-bottom: 15px;
+		margin-top: 15px;
+		font-size: 0.9em;
+	}
+
 	&.done {
 		animation: hideSignup .25s;
 		height: 0;

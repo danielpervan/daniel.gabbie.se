@@ -194,6 +194,7 @@ class SignUpPage extends Component {
 					{!this.state.isAnonymous && <div className="row"><div className="column" style={{textAlign: "center"}}>Logged in with Facebook. <a href="#" onClick={this.logout}>(Log out)</a></div></div>}
 					<div className="row align-center">
 						<div className="column medium-7">
+							<div className="desc">Note: if you sign up without logging in, you won't be able to edit your form if you close or reload this window.</div>
 							<label>
 								Name<span className="required">(required)</span>
 								<input type="text" name="name" ref="formName" placeholder="John Doe" onChange={this.handleNameChange} required/>
