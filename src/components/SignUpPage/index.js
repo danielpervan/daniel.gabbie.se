@@ -13,16 +13,19 @@ class SignUpPage extends Component {
 		this.state = {
 			showSecondPerson: false,
 			showPostingBox: false,
-			isAnonymous: true
+			isAnonymous: true,
+			name: false,
+			email: false
 		}
 
 		firebase.auth().onAuthStateChanged(function(user) {
 			if (user) {
-				console.log(user)
 				this.setState({
 		          ...this.state,
 		          uid: user.uid,
 		          isAnonymous: user.isAnonymous,
+		          name: user.displayName,
+		          email: user.email
 		        })
 				this.fetchData()
 			}
@@ -42,7 +45,7 @@ class SignUpPage extends Component {
 				email: this.refs.formEmail.value,
 				name2: this.refs.formName2 ? this.refs.formName2.value : null,
 				allergies: this.maybe(this.refs.formAllergies.value, null),
-				allergies2: this.refs.allergies2 ? this.refs.allergies2.value : null,
+				allergies2: this.refs.formAllergies2 ? this.refs.formAllergies2.value : null,
 				arrival: this.maybe(this.refs.formArrival.value,null),
 				departure: this.maybe(this.refs.formDeparture.value, null),
 				comments: this.maybe(this.refs.formComments.value, null),
@@ -112,7 +115,6 @@ class SignUpPage extends Component {
 		firebase.fetch(`signups/${this.context.uid}`, {
 			context: this,
 		}).then(data => {
-			console.log(data)
 			this.refs.formName.value = data.name
 			if (data.name2) {
 				this.setState({
@@ -138,6 +140,13 @@ class SignUpPage extends Component {
 				...this.state,
 				showPostingBox: false
 			})
+
+			if (this.state.name) {
+				this.refs.formName.value = this.state.name
+			}
+			if (this.state.email) {
+				this.refs.formEmail.value = this.state.email
+			}
 		})
 	}
 
@@ -152,11 +161,16 @@ class SignUpPage extends Component {
 		          isAnonymous: user.isAnonymous,
 		          showFacebookButton: false
 		        })
-		        console.log(user)
 		        this.refs.formEmail.value = user.email
 		        this.refs.formName.value = user.displayName
 			}
 		})
+	}
+
+	logout(ev) {
+		ev.preventDefault()
+		firebase.unauth()
+		firebase.auth().signInAnonymously()
 	}
 
 	componentWillMount() {
@@ -177,7 +191,7 @@ class SignUpPage extends Component {
 				</div>}
 				<form onSubmit={this.handlePost} className="signupForm" data-abide>
 					{this.state.isAnonymous && <button className="button facebookButton" type="button" onClick={this.facebookLogin}>Login with Facebook</button>}
-					{!this.state.isAnonymous && <div className="row"><div className="column" style={{textAlign: "center"}}>Logged in with Facebook</div></div>}
+					{!this.state.isAnonymous && <div className="row"><div className="column" style={{textAlign: "center"}}>Logged in with Facebook. <a href="#" onClick={this.logout}>(Log out)</a></div></div>}
 					<div className="row align-center">
 						<div className="column medium-7">
 							<label>
