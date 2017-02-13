@@ -153,7 +153,6 @@ class SignUpPage extends Component {
 	facebookLogin(ev) {
 		ev.preventDefault()
 		firebase.authWithOAuthPopup('facebook', (error, user) => {
-			console.log({user:user})
 			if (!error){
 				user = user.user
 				this.setState({
@@ -164,8 +163,6 @@ class SignUpPage extends Component {
 		        })
 		        this.refs.formEmail.value = user.email
 		        this.refs.formName.value = user.displayName
-			} else {
-				console.log(error)
 			}
 		})
 	}
