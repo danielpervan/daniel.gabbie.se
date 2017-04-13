@@ -16,7 +16,7 @@ class SaveDateCard extends Component {
             </div>
           </div>
           <div className="bottom">
-          <p>Please notify us as soon as possible if you already know that you can’t come.</p>
+          <p>If you have any questions or request, we can be reached at</p>
           <a href="mailto:daniel@gabbie.se">daniel@gabbie.se</a>
           </div>
         </div>
