@@ -6,6 +6,7 @@ import App from '../App'
 import GistPage from '../GistPage'
 import DressCodePage from '../DressCodePage'
 import SignUpPage from '../SignUpPage'
+import SchedulePage from '../SchedulePage'
 import NotFound from '../NotFound'
 
 const Routes = (props) => (
@@ -14,6 +15,7 @@ const Routes = (props) => (
 			<Route path="/" component={GistPage} page="gist"/>
 			<Route path="dresscode" component={DressCodePage} />
 			<Route path="signup" component={SignUpPage} />
+			<Route path="schedule" component={SchedulePage} />
 			<Route path="*" component={NotFound} />
 		</Route>
 	</Router>

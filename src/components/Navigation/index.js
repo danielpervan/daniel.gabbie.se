@@ -27,8 +27,8 @@ class Navigation extends Component {
               <li className={this.isCurrentPage('')}>
                 <Link to="/">The gist of it</Link>
               </li>
-              <li className="disabled">
-                <i className="fa fa-lock" aria-hidden="true"></i>About Dubrovnik
+              <li className={this.isCurrentPage('schedule')}>
+                <Link to="schedule">Schedule</Link>
               </li>
               <li className={this.isCurrentPage('dresscode')}>
                <Link to="dresscode">Clothing tutorial</Link>
