@@ -24,10 +24,11 @@ class SchedulePage extends Component {
 					<p><b>Dresscode:</b> Bathrobe/nightwear/underwear and/or combat gear if needed (see breakfast person)</p>
 					<h3>Lunchtime probably at about 12 or 13 o'clock</h3>
 					<p>Everyone will gather at Kazbek Hotel to participate in the mandatory pool-party-fun-time. Absence will be noted and disciplined.</p>
+					<p>Transportation to and from Kazbek can either be done through repeatedly putting one foot in front of the other, or waiting for the staff to pick you up in their motorised vehicles.</p>
 					<p><b>Dresscode:</b> Bathing suite or similar.</p>
 					<h3>Evening, like at around 20:00</h3>
 					<p>Dinner will be held at <a href="https://www.google.se/maps/place/Ul.+Ivana+pl.+Zajca+26,+20000,+Dubrovnik,+Croatia/@42.6637136,18.0657774,272m/data=!3m2!1e3!4b1!4m5!3m4!1s0x134c7546b0712611:0x37678b2b758dea54!8m2!3d42.6637136!4d18.066661?hl=en">Villa Kapetana</a>. Make sure to have showered and dressed up before that.</p>
-					<p><b>Dresscode:</b> Proper, but comfortable.</p>
+					<p><b>Dresscode:</b> Festive summer party.</p>
 					<header>
 						<h2>Saturday, 8 July 2017</h2>
 						<h3>The Happening</h3>
@@ -50,6 +51,7 @@ class SchedulePage extends Component {
 					</header>
 					<h3>11:00</h3>
 					<p>Brunch will be served at Kazbek for anyone who's still alive.</p>
+					<p>As before, travel to and from Kazbek can be done through walking or with the designed motorised vehicles.</p>
 					<p>We hope that everyone has had a fantastic few days and wish you all safe travels back to where you came from.</p>
 					<p><b>Dresscode:</b> Comfortable clothes.</p>
 				</TextBox>
