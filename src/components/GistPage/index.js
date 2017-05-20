@@ -8,7 +8,7 @@ class GistPage extends Component {
     return (
       <div>
         <TextBox title="Gifts and so on">
-          <p>As is tradition some might be bringing gifts and materialistic satisfaction. In order to avoid duplicates and other misfortunes, this part is being coordinated by the lovely bridesmaids Weronica and Disa. They can be contacted at <a href="mailto:wedding.daniel.gabbie@gmail.com">wedding.daniel.gabbie@gmail.com</a>.</p>
+          <p>As is tradition some might be bringing gifts to satisfy our materialistic needs. In order to avoid duplicates and other misfortunes, this part is being coordinated by the lovely bridesmaids Weronica and Disa. They can be contacted at <a href="mailto:wedding.daniel.gabbie@gmail.com">wedding.daniel.gabbie@gmail.com</a>.</p>
           <p>To make it a tad easier to collaborate, we’ve created a marvellous Google Docs document containing a wish list that you can mark and comment on. Most further information regarding this will also be written in this document. You can find a link to it below:</p>
           <p><a href="https://docs.google.com/document/d/1-R-DGkixayKgS-_gNDaRv-5lAfUG89R3o5pFD-UBJzQ/edit?usp=sharing_eil&ts=59208ffb" className="button large">Open Document</a></p>
         </TextBox>
